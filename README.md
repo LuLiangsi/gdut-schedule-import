@@ -32,10 +32,12 @@ pip install -r requirements.txt
 ## 使用方法
 ### 自动挡
 1. 运行`main.py`：
+
     Mac & Linux
 ```bash
 python3 main.py
 ```
+
     Windows
 ```bash
 python main.py
@@ -45,10 +47,12 @@ python main.py
 ### 手动挡
 1. 将你从教务系统导出的课程表CSV文件放置在项目目录中。
 2. 运行`main.py`：
+
     Mac & Linux
 ```bash
 python3 main.py
 ```
+
     Windows
 ```bash
 python main.py
