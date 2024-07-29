@@ -10,7 +10,7 @@
 - 手动挡：将教务系统导出的CSV转换为日历文件
 
 ## 安装
-0. 本项目需要python版本3.9以上，由于使用了``进行登陆模拟，需要chrome内核
+0. 本项目需要python版本3.9以上，由于使用了`selenium`进行登陆模拟，需要chrome内核
 1. 克隆本仓库到本地：
 ```bash
 git clone https://github.com/LuLiangsi/gdut-schedule-import.git
