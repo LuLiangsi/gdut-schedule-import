@@ -13,7 +13,7 @@
 0. 本项目需要python版本3.9以上，由于使用了``进行登陆模拟，需要chrome内核
 1. 克隆本仓库到本地：
 ```bash
-git clone https://github.com/yourusername/gdut-schedule-import.git
+git clone https://github.com/LuLiangsi/gdut-schedule-import.git
 ```
 2. 进入项目目录：
 ```bash
