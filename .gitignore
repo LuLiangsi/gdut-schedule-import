@@ -1,5 +1,6 @@
 *.csv
 *.ics
 *.ipynb
+.DS_Store
 test
 login_page
