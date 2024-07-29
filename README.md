@@ -20,11 +20,12 @@ git clone https://github.com/LuLiangsi/gdut-schedule-import.git
 cd gdut-schedule-import
 ```
 3. 安装依赖：
-Mac & Linux
+
+- Mac & Linux
 ```bash
 pip3 install -r requirements.txt
 ```
-Windows
+- Windows
 ```bash
 pip install -r requirements.txt
 ```
@@ -33,12 +34,12 @@ pip install -r requirements.txt
 ### 自动挡
 1. 运行`main.py`：
 
-    Mac & Linux
+- Mac & Linux
 ```bash
 python3 main.py
 ```
 
-    Windows
+- Windows
 ```bash
 python main.py
 ```
@@ -48,12 +49,12 @@ python main.py
 1. 将你从教务系统导出的课程表CSV文件放置在项目目录中。
 2. 运行`main.py`：
 
-    Mac & Linux
+- Mac & Linux
 ```bash
 python3 main.py
 ```
 
-    Windows
+- Windows
 ```bash
 python main.py
 ```
