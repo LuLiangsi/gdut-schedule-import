@@ -29,7 +29,7 @@ def chooseSemester():
 
     return semester_code, year, season
 
-def pd2ics(semester, schedual):
+def pd2ics(year, season, schedual):
 
     ics = f"""BEGIN:VCALENDAR
 METHOD:PUBLISH
@@ -37,15 +37,35 @@ VERSION:2.0
 
 """
 
-    turn = {'0102':['083000','100500'],
-            '0304':['102500','120000'],
-            '05':['135000','143500'],
-            '0607':['144000','161500'],
-            '0809':['163000','180500'],
-            '1011':['183000','200500'],
-            '101112':['183000','205500'],
-            '0102030405060708':['083000','171500']
-            }
+    begin = {
+        '01': '083000',
+        '02': '092000',
+        '03': '102500',
+        '04': '111500',
+        '05': '135000',
+        '06': '144000',
+        '07': '153000',
+        '08': '163000',
+        '09': '172000',
+        '10': '183000',
+        '11': '192000',
+        '12': '201000'
+    }
+
+    end = {
+        '01': '091500',
+        '02': '100500',
+        '03': '111000',
+        '04': '120000',
+        '05': '143500',
+        '06': '152500',
+        '07': '161500',
+        '08': '171500',
+        '09': '180500',
+        '10': '191500',
+        '11': '200500',
+        '12': '205500'
+    }
 
     table_size, table_type = schedual.shape
 
@@ -54,8 +74,8 @@ VERSION:2.0
         class_site = schedual['jxcdmc'][i]
         class_teacher = schedual['teaxms'][i]
         class_date = schedual['pkrq'][i].replace('-','')
-        class_begin = class_date + 'T' + turn[schedual['jcdm'][i]][0]
-        class_end = class_date + 'T' + turn[schedual['jcdm'][i]][1]
+        class_begin = class_date + 'T' + begin[schedual['jcdm'][i][:2]]
+        class_end = class_date + 'T' + end[schedual['jcdm'][i][-2:]]
         ics += f"""BEGIN:VEVENT
 UID:{uuid.uuid4()}
 DTSTART;TZID=Asia/Shanghai:{class_begin}
@@ -67,7 +87,7 @@ END:VEVENT
 
     ics += 'END:VCALENDAR'
 
-    with open(f'{semester}.ics', 'w') as file:
+    with open(f'{year}{"春季" if season=="1" else "秋季"}课表.ics', 'w') as file:
         file.write(ics)
 
 
@@ -158,9 +178,9 @@ def download():
         
     print('正在导出中，请稍等...')
 
-    pd2ics(semester, data)
+    pd2ics(year, season, data)
 
-    print(f'导出成功, 生成文件为{year+"春季" if season=="1" else "秋季"}课表.ics，请用日历软件打开以导入')
+    print(f'导出成功, 生成文件为{year}{"春季" if season=="1" else "秋季"}课表.ics，请用日历软件打开以导入')
 
 if __name__ == '__main__':
     download()
