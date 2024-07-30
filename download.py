@@ -13,7 +13,7 @@ def chooseSemester():
     year = input('请输入导出课表的年份：\n')
     if year<'2010' or year>'2029':
         while year<'2010' or year>'2029':
-            year = input('根据教务系统，仅支持导出2010年至2019年的课表，请检查你的输入\n请输入导出课表的学年：\n')
+            year = input('根据教务系统，仅支持导出2010年至2029年的课表，请检查你的输入\n请输入导出课表的学年：\n')
     
     season = input('请输入导出课表的学期：\n1.春季\n2.秋季\n')
     if season != '1' and season != '2':
@@ -171,7 +171,7 @@ def download():
         url = 'https://jxfw.gdut.edu.cn/xsgrkbcx!getDataList.action'
         res = requests.post(url, cookies=cookies_dict, headers=headers, data=payload)
         if res.json()['total'] == 0:
-            print(f'未找到该学期({semester})课表，请检查学年学期是否正确')
+            print(f'未找到该学期({year}{"春季" if season=="1" else "秋季"})课表，请检查学年学期是否正确')
             continue
         data = pd.DataFrame(res.json()['rows'], dtype=str)
         for_sure = input(year+f"年度{'春季' if season=='1' else '秋季'}的课程主要有：{set(data['kcmc'])}\n是否确认导出该课表？\n1.确认\n2.取消，选择其他学期\n")
@@ -180,7 +180,7 @@ def download():
 
     pd2ics(year, season, data)
 
-    print(f'导出成功, 生成文件为{year}{"春季" if season=="1" else "秋季"}课表.ics，请用日历软件打开以导入')
+    print(f'导出成功, 在项目目录生成文件为{year}{"春季" if season=="1" else "秋季"}课表.ics，请用日历软件打开以导入')
 
 if __name__ == '__main__':
     download()

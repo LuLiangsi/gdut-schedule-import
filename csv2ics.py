@@ -93,7 +93,7 @@ END:VEVENT
     with open('课表导出.ics', 'w') as file:
         file.write(ics)
 
-    print(f'导出成功, 生成文件为 课表导出.ics，请用日历软件打开以导入')
+    print(f'导出成功, 在项目目录生成文件为 课表导出.ics，请用日历软件打开以导入')
 
 if __name__ == '__main__':
     csv2ics()

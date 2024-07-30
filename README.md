@@ -39,7 +39,7 @@ pip install -r requirements.txt
 python3 main.py
 ```
 
-- Windows
+- Windows（由于涉及写入文件，请以管理员身份打开，防止因权限问题无法写入日历文件）
 ```bash
 python main.py
 ```
@@ -54,7 +54,7 @@ python main.py
 python3 main.py
 ```
 
-- Windows
+- Windows（由于涉及写入文件，请以管理员身份打开，防止因权限问题无法写入日历文件）
 ```bash
 python main.py
 ```
