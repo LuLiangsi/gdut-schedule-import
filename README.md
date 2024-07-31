@@ -1,7 +1,7 @@
 # gdut-schedule-import
 
 ## 项目简介
-`gdut-schedule-import` 是一个用于将广东工业大学的学生课程表导入到日历应用中的工具。
+`gdut-schedule-import` 是一个将广东工业大学的学生课程表导入到日历应用中的工具。
 
 本项目仅作学习使用。
 
