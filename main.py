@@ -1,7 +1,6 @@
 import download
 import csv2ics
 import time
-import sys
 
 def main():
     choose = input('请输入你要执行的操作：\n1.登陆教务系统以导出课表生成日历\n2.自行导出课表(.csv)放在 main.py 同根目录下以生成日历\n0.退出\n')

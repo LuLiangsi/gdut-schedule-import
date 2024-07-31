@@ -109,10 +109,7 @@ def download():
         })
         """
     })
-
-
     
-
     Quit_while = False
     first_time = True
 
